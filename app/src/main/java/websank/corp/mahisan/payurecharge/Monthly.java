@@ -1,9 +1,12 @@
 package websank.corp.mahisan.payurecharge;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.provider.CallLog;
@@ -42,6 +45,8 @@ public class Monthly extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.monthly);
+        ActionBar mActionBar = getActionBar();
+        mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#007cd2")));
         textView = (TextView) findViewById(R.id.textview_call);
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -201,7 +206,7 @@ public class Monthly extends Activity {
             }
 
         }
-        sb.append( "Net Outgoing last Weekday =  :--- " + netOutgoing);
+        sb.append( "Net Outgoing Till Last Month = " + netOutgoing + "sec");
 //        Calendar c = Calendar.getInstance();
 //        SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
 //        String strDate = sdf.format(c.getTime());
