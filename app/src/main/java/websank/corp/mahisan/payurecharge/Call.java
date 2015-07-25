@@ -24,7 +24,7 @@ public class Call extends Activity implements View.OnClickListener{
         b2 = (Button)findViewById(R.id.button2);
         b3 = (Button)findViewById(R.id.button3);
 
-        b1.setOnClickListener(this);
+        b1.setOnClickListener(this)
         b2.setOnClickListener(this);
         b3.setOnClickListener(this);
     }
